@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://World/PauseScreen.gd" type="Script" id=1]
+
+[node name="PauseScreen" type="Control"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.486275, 0.933333, 0.282353, 0.462745 )
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -44.0
+margin_top = 28.0
+margin_right = 44.0
+margin_bottom = 42.0
+custom_colors/font_color = Color( 0.109804, 0.176471, 0.596078, 1 )
+custom_colors/font_outline_modulate = Color( 0.27451, 0.0509804, 0.0509804, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Game Paused"
+align = 1
+
+[node name="Continue" type="Button" parent="."]
+margin_left = 127.0
+margin_top = 99.0
+margin_right = 196.0
+margin_bottom = 119.0
+text = "Continue"
+
+[connection signal="pressed" from="Continue" to="." method="_on_Continue_pressed"]
