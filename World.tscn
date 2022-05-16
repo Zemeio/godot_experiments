@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://World/Bush.tscn" type="PackedScene" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://World/Tree.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Music and Sounds/Music.mp3" type="AudioStream" id=10]
 [ext_resource path="res://World/PauseScreen.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Inventory/Bat.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Inventory/InventoryUI.tscn" type="PackedScene" id=13]
 
 [sub_resource type="TileSet" id=1]
 0/name = "DirtTileset.png 0"
@@ -512,6 +514,12 @@ tile_data = PoolIntArray( -262136, 0, 0, -262135, 0, 1, -262134, 0, 2, -262131, 
 
 [node name="YSort" type="YSort" parent="."]
 
+[node name="Collectables" type="YSort" parent="YSort"]
+
+[node name="SuperBat" parent="YSort/Collectables" instance=ExtResource( 12 )]
+position = Vector2( 48, 80 )
+Name = "Super Bat"
+
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 56, 48 )
 
@@ -593,6 +601,10 @@ margin_right = 122.0
 margin_bottom = 19.0
 
 [node name="PauseScreen" parent="UI" instance=ExtResource( 11 )]
+
+[node name="InventoryUI" parent="UI" instance=ExtResource( 13 )]
+margin_top = 152.0
+margin_bottom = 177.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 56, 48 )
